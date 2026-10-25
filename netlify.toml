@@ -1,2 +1,8 @@
+[build.environment]
+  # The admin WhatsApp number is intentionally public: Next.js inlines
+  # NEXT_PUBLIC_* values into the client bundle so the booking form can
+  # open a wa.me link. Exclude it from secrets scanning so builds don't fail.
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_ADMIN_WHATSAPP_NUMBER"
+
 [functions]
   directory = "netlify/functions"
